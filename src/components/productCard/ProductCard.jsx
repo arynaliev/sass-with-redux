@@ -29,10 +29,10 @@ const ProductCard = ({
 };
 
 ProductCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  stockCount: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  imageUrl: PropTypes.string,
+  stockCount: PropTypes.number,
 };
 
 export default ProductCard;

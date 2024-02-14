@@ -1,24 +1,59 @@
+@use "../../sass/colors";
+@use "../../sass/breakpoints";
+@use "../../sass/mixins";
+
 .product {
   padding: 5px;
   border: 1px solid black;
-}
 
-.product__btn {
-  padding: 0.7rem;
-  border: none;
-  background: #814900;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: 0.4s ease;
-}
+  &__img {
+    border-radius: 5px;
+  }
 
-.product__btn_muted {
-  background: #8149006f;
-}
+  &__name {
+    font-size: 14px;
 
-.product__btn_muted:hover {
-  background: #8149006f;
-  transform: translateY(-1px);
-  box-shadow: 0 0 0 0.2rem;
+    // @media (min-width: breakpoints.$mobile-screen) {
+    //   background: #fcb603;
+    // }
+    @include mixins.mobileMedia() {
+      background: #fcb603;
+    }
+  }
+
+  &__price {
+    font-weight: bolder;
+
+    &::before {
+      content: "$";
+    }
+  }
+
+  &__btn {
+    padding: 0.7rem;
+    border: none;
+    background: colors.$main-btn-color;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+
+    &:hover {
+      background: #fcb603;
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 0.2rem tgba(252, 186, 3, 0.45);
+    }
+    &:active {
+      transform: translateY(4px);
+      box-shadow: 0 0 0 0.2rem rgba(252, 186, 3, 0.45);
+    }
+    &_muted {
+      background: #8149006f;
+      &:hover {
+        background: #8149006f;
+        transform: translateY(-1px);
+        box-shadow: 0 0 0 0.2rem;
+      }
+    }
+  }
 }
