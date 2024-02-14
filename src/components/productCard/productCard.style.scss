@@ -1,0 +1,24 @@
+.product {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.product__btn {
+  padding: 0.7rem;
+  border: none;
+  background: #814900;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.4s ease;
+}
+
+.product__btn_muted {
+  background: #8149006f;
+}
+
+.product__btn_muted:hover {
+  background: #8149006f;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 0.2rem;
+}
