@@ -13,18 +13,21 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const newItem = action.payload;
-      const itemInCart = state.cartItems.find((item) => item.id === newItem.id);
-
-      if (itemInCart) {
-        itemInCart.quantity += 1;
-        state.totalPrice += newItem.price;
-        // itemInCart.stockCount -= 1;
-      } else {
-        state.cartItems.push(newItem);
-        state.totalPrice += newItem.price;
-        // newItem.stockCount -= 1;
-      }
+      state.cartItems.push(newItem);
+      state.totalPrice += newItem.price;
     },
+
+    // if (itemInCart) {
+    //   // itemInCart.quantity += 1;
+
+    //   state.totalPrice += newItem.price;
+    //   // itemInCart.stockCount -= 1;
+    // } else {
+    //   state.cartItems.push(newItem);
+    //   state.totalPrice += newItem.price;
+    //   // newItem.stockCount -= 1;
+    // }
+
     // addExistingItem: (state, action) => {},
     removeItem: (state, action) => {
       const itemToRemove = action.payload;

@@ -8,7 +8,7 @@ import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCh
 const HomePage = () => {
   const { allItems } = useSelector((state) => state.cart);
 
-  function addItemToCart() {}
+  //   function addItemToCart() {}
 
   return (
     <div className="home-page">
